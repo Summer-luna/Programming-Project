@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function ufoblink(whichufo){
+            var whichimage = whichufo;
+            var id = setInterval(ufoframe, 100);
+            var whichframe = 0;
+            var goingup = true;
+            function ufoframe(){
+                //console.log(document.getElementById("ufoalive" + whichimage).value);
+                var isalive = parseInt(document.getElementById("ufoalive" + whichimage).value);
+                if(isalive == 0){
+                    clearInterval(id);
+                }
+                else if(goingup){
+                        whichframe++;
+                        if(whichframe == 2)
+                            goingup = false;
+                    }
+                    else{
+                        whichframe--;
+                        if(whichframe == 0){
+                            goingup = true;
+                        }
+                    }
+                    document.getElementById("ufo" + whichimage).src = "ufo" + whichframe + ".png";
+                
+            }
+        }
+
+        function gamesetup(){
+            ufoblink(0);
+            ufoblink(1);
+            ufomove(0);
+            ufomove(1);
+            movefighter();
+        }
+
+        function killufo(whichufo){
+            var xpos = document.getElementById("ufoxpos" + whichufo).value;
+            var ypos = document.getElementById("ufoypos" + whichufo).value;
+            createexplosion(xpos, ypos, whichufo);
+            document.getElementById("ufoalive" + whichufo).value = 0;
+            document.getElementById("ufo" + whichufo).style.visibility = "hidden";
+        }
+
+        function ufomove(whichufo){
+            var whichimage = whichufo;
+            var id = setInterval(ufoframe, 20);
+            var myx = 0;
+            var goright = false;
+            function ufoframe(){
+                var x = 0;
+                var blowup = false;
+                var missilex = 0;
+                var missiley = 0;
+                var missilealive = 1;
+                var mynomissiles = parseInt(nomissiles.value);
+
+                var myy = 0;
+                var isalive = parseInt(document.getElementById("ufoalive" + whichimage).value);
+                if(isalive == 0)
+                    clearInterval(id);
+                else{
+                    myx = parseInt(document.getElementById("ufoxpos" + whichimage).value);
+                    myy = parseInt(document.getElementById("ufoypos" + whichimage).value);
+                    if(parseInt(document.getElementById("ufodir" + whichimage).value) == 1)
+                        goright = true;
+                    else
+                        goright = false;
+                    
+                    while(!blowup && x<mynomissiles){
+                        missilex = parseInt(document.getElementById("missilexpos" + x).value);
+                        missiley = parseInt(document.getElementById("missileypos" + x).value);
+                        missilealive = parseInt(document.getElementById("missilealive" + x).value);
+                        if(missilex <= myx + 50 && 
+                           missilex+10 >= myx && 
+                           myy <= missiley + 20 && 
+                           myy + 10 >= missiley && 
+                           missilealive == 1)
+                            blowup = true;
+                        else
+                            x++;                        
+                    }
+                    
+                    if(blowup){
+                        document.getElementById("missilealive" + x).value = 0;
+                        document.getElementById("missile" + x).style.visibility = "hidden";
+                        killufo(whichimage);
+                        clearInterval(id);
+                    }
+                    
+                    else if(goright){
+                        myx += 10;
+                        if(myx > 1000){
+                            document.getElementById('ufodir' + whichimage).value = 0;
+                        }
+                    }
+                    else{
+                        myx -= 10;
+                        if(myx <= 0)
+                            document.getElementById('ufodir' + whichimage).value = 1;
+                    }
+                    document.getElementById('ufoxpos' + whichimage).value = myx;
+                    document.getElementById('ufo' + whichimage).style.left = myx + "px";
+                }
+            }
+        }
+
+        /* Create explosions */    
+        function createexplosion(xcoord, ycoord, whichone){
+            /* Add audio */
+            var myaudio = document.createElement("audio");
+            var mysource = document.createElement("source");
+            mysource.src = "explosion.mp3";
+            myaudio.appendChild(mysource);
+
+            myaudio.play();
+            /* Add img */
+            var myexplosion = document.createElement("img");
+            myexplosion.src = "explosion0.png";
+            myexplosion.id = "explosion" + whichone;
+            myexplosion.style.position = "absolute";
+            myexplosion.style.top = ycoord + "px";
+            myexplosion.style.left = xcoord + "px";
+            myexplosion.style.width = "50px";
+            document.getElementById("explosions").appendChild(myexplosion);
+            var id = setInterval(explosionframe, 20);
+            var x = 0;
+            var onecycle = false;
+
+            function explosionframe(){
+                if(onecycle)
+                    x--;
+                else{
+                    x++;
+                    if(x == 2)
+                        onecycle = true;
+                    }
+                    if(onecycle && x==-1){
+                        document.getElementById("explosion" + whichone).style.visibility = "hidden";
+                        clearInterval(id);
+                    }
+                    else{
+                        myexplosion.src = "explosion" + x + ".png";
+                    }
+                }    
+        }
+
+        function movefighter(){
+            var id = setInterval(fighterframe, 20);
+            function fighterframe(){
+                var myfighterx = parseInt(fighterx.value);
+                var whichdir = parseInt(fighterdir.value);
+                if(parseInt(whichdir) == 1){
+                    myfighterx += 10;
+                    if(myfighterx>1000)
+                        fighterdir.value = 0;
+                }
+                else if(parseInt(whichdir) == -1){
+                    myfighterx -= 10;
+                    if(myfighterx <= 5)
+                        fighterdir.value = 0;
+                }
+                fighter.style.left = myfighterx + "px";
+                fighterx.value = myfighterx;
+            }
+        }
+
+        /* manage keyboard entry */
+        function userkeypress(myevent){
+            if(myevent.keyCode == 37) //left arrow key pressed
+                fighterdir.value = -1;
+            else if(myevent.keyCode == 39) //right arrow key pressed
+                fighterdir.value = 1;
+            else if(myevent.keyCode == 32) //spacebar pressed
+                firemissiles();
+        }
+
+        function usertouch(myevent){
+            if(myevent.touches[0].clientX < parseInt(fighterx.value) && myevent.touches[0].clientY > 300)
+                fighterdir.value = -1;
+            else if(myevent.touches[0].clientX > parseInt(fighterx.value) + 50 && myevent.touches[0].clientY > 300)
+                fighterdir.value = 1;
+            else if(myevent.touches[0].clientY <= 300)
+                firemissiles();
+        }
+
+
+
+    </script>
+    <title>My Awesome Game</title>
+</head>
+<body onload="gamesetup();" onkeydown="userkeypress(event);" ontouchstart = "usertouch(event);">
+    <form name="ufogame">
+        <div id="MyCanvas" style="width:1000px; height:500px; position:relative;">
+            <div id="ufos">
+                <img id="ufo0" src="ufo0.png" style="width: 50px; position:absolute; top:100px; left:100px;" />
+                <img id="ufo1" src="ufo0.png"  style="width: 50px; position:absolute; top:225px; left:225px;" />
+                <input type="hidden" name="ufoalive0" id="ufoalive0" value="1" />
+                <input type="hidden" name="ufoalive1" id="ufoalive1" value="1" />
+                <!-- Make UFO Move -->
+                <input type="hidden" name="ufodir0" id="ufodir0" value="1" />
+                <input type="hidden" name="ufodir1" id="ufodir1" value="1" />
+                <input type="hidden" name="ufoxpos0" id="ufoxpos0" value="475" />
+                <input type="hidden" name="ufoxpos1" id="ufoxpos1" value="300" />
+                <input type="hidden" name="ufoypos0" id="ufoypos0" value="100" />
+                <input type="hidden" name="ufoypos1" id="ufoypos1" value="225" />
+
+            </div>
+            <div id="missiles">
+                <img src="missile.PNG" id="missile0" style="height:20px; position: absolute; top:100px; left:10px;" />
+                <img src="missile.PNG" id="missile1" style="height:20px; position: absolute; top:225px; left:100px;" />
+                
+                <input type="hidden" name="missilexpos0" id="missilexpos0" value = "10" />
+                <input type="hidden" name="missilexpos1" id="missilexpos1" value = "100" />
+                <input type="hidden" name="missilealive0" id="missilealive0" value = "1" />
+                <input type="hidden" name="missilealive1" id="missilealive1" value = "1" />
+                <input type="hidden" name="missileypos0" id="missileypos0" value = "100" />
+                <input type="hidden" name="missileypos1" id="missileypos1" value = "225" />
+                <input type="hidden" name="nomissiles" id="nomissiles" value = "2" />
+
+            </div>
+            <div id="explosions">
+            </div>
+            <img id="fighter" src="fighter.png" style="width:50px; position:absolute; top:450px; left:457px;">
+            <input type="hidden" name="fighterx" id="fighterx" value="475" />
+            <input type="hidden" name="fightery" id="fightery" value="450" />
+            <input type="hidden" name="fighterdir" id="fighterdir" value="0" />
+        </div>
+        <p id="messages"></p>
+        <button type="button" onclick="killufo(1)">Kill UFO 1</button>
+    </form>
+    
+</body>
+</html>

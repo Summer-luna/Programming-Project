@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>On Your Own - Textboxes and Buttons</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td style="text-align:right">
+                    <label for="firstNumber">Enter first number:</label>
+                </td>
+                <td>
+                    <input type="number" name="firstNumber" id="firstNumber">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right">
+                    <label for="secondNumber">Enter second number:</label>
+                </td>
+                <td>
+                    <input type="number" name="secondNumber" id="secondNumber">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right">Operation to perform:</td>
+                <td>
+                    <button type="button" value="add" disabled>+</button>
+                    <button type="button" value="subtract" disabled>-</button>
+                    <button type="button" value="multiply" disabled>x</button>
+                    <button type="button" value="divide" disabled>/</button>
+                    <input type="hidden" id="previousBtn" >
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right">Result of operation:</td>
+                <td id="display"></td>
+            </tr>
+        </table>
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
