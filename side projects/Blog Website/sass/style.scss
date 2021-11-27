@@ -1,0 +1,59 @@
+.thanksgiving {
+  font-family: "Sharp Grotesk Book 20";
+  font-size: 14px;
+}
+
+#logo {
+  height: 55px;
+  max-width: 200px;
+}
+
+.navbar-toggler {
+  outline: black;
+}
+
+#menubar {
+  font-size: 18px;
+  font-family: "Sharp Grotesk Book 20";
+}
+
+.navbar-nav {
+  color: white;
+}
+
+.nav-item {
+  padding: 0 8px;
+}
+
+.recipeTitle {
+  font-family: "Lydian";
+  /* font-size: 64px; */
+  font-size: 3.2rem;
+  margin-right: 12px;
+}
+
+@media (min-width: 768px) {
+  .recipeTitle {
+    font-size: 4rem;
+  }
+  .recipeDescribe {
+    font-size: 16px;
+  }
+}
+
+.recipeDescribe {
+  font-family: "Sharp Grotesk Book 20";
+  font-size: 1.5rem;
+  font-weight: thin;
+  line-height: 45px;
+}
+
+// custom variables
+$dark: black;
+
+$navbar-dark-color: white;
+
+$navbar-dark-toggler-border-color: black;
+
+// import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
