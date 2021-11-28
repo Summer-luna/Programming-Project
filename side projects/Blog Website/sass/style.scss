@@ -1,6 +1,22 @@
-.thanksgiving {
-  font-family: "Sharp Grotesk Book 20";
+$sharpeGrotestBook: "Sharp Grotesk Book 20";
+
+@mixin smallTitle {
+  font-family: $sharpeGrotestBook;
   font-size: 14px;
+}
+
+@mixin navbar {
+  font-size: 18px;
+  font-family: $sharpeGrotestBook;
+}
+
+@mixin bigTitle {
+  font-family: "Lydian";
+  font-size: 3.2rem;
+}
+
+.thanksgiving {
+  @include smallTitle();
 }
 
 #logo {
@@ -13,8 +29,7 @@
 }
 
 #menubar {
-  font-size: 18px;
-  font-family: "Sharp Grotesk Book 20";
+  @include navbar();
 }
 
 .navbar-nav {
@@ -26,9 +41,7 @@
 }
 
 .recipeTitle {
-  font-family: "Lydian";
-  /* font-size: 64px; */
-  font-size: 3.2rem;
+  @include bigTitle();
   margin-right: 12px;
 }
 
@@ -42,12 +55,80 @@
 }
 
 .recipeDescribe {
-  font-family: "Sharp Grotesk Book 20";
+  font-family: $sharpeGrotestBook;
   font-size: 1.5rem;
   font-weight: thin;
   line-height: 45px;
 }
 
+.recipeTitle2 {
+  font-family: $sharpeGrotestBook;
+  font-size: 1.5rem;
+}
+
+.sharpeGrotestBook {
+  font-family: $sharpeGrotestBook;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+  /* border: 5px solid red; */
+  overflow: hidden;
+}
+
+iframe {
+  position: absolute;
+  inset: 0px 0px 0px -55vw;
+  width: 100rem;
+  height: 100%;
+  z-index: -5;
+  overflow-x: hidden;
+}
+
+@media (min-width: 780px) and (max-width: 999px) {
+  iframe {
+    position: absolute;
+    inset: 0px 0px 0px -40vw;
+    width: 100rem;
+    height: 100%;
+    z-index: -5;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+  iframe {
+    position: absolute;
+    inset: 0px 0px 0px -75vw;
+    width: 250vw;
+    height: 100%;
+    z-index: -5;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 1400px) {
+  iframe {
+    position: absolute;
+    inset: -8vh 0px 0px 0px;
+    width: 100%;
+    height: 41vh;
+    z-index: -5;
+    overflow-x: hidden;
+    zoom: 3;
+  }
+}
+
+.smallTitle {
+  @include smallTitle();
+  z-index: 1;
+}
+
+a:hover {
+  opacity: 0.5;
+}
 // custom variables
 $dark: black;
 
