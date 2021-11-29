@@ -156,16 +156,19 @@ a:hover {
 .steamed-baozi {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 20vh;
 }
 
 .steamed-baozi-video {
   position: absolute;
-  bottom: 100vh;
   left: 0px;
-  height: 60vh;
+  height: 20vh;
   width: 100%;
-  z-index: 5;
+  top: 0.8vh;
+}
+
+#gif {
+  width: 100%;
 }
 
 footer {
