@@ -1,0 +1,238 @@
+@import "./variable";
+@import "./baseLayout";
+
+/* Header */
+nav {
+  min-height: 15vh;
+  margin: 3em 0;
+  .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#logo {
+  width: 13em;
+  margin: 3em 0;
+  filter: invert(1);
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  font-size: map-get($fonts, "nav-text");
+  list-style: none;
+  margin-left: 1.5em;
+
+  a {
+    color: map-get($colors, "black");
+    text-decoration: none;
+    font-family: SharpGroteskBook20;
+  }
+}
+
+// small screen remove logo
+@media screen and (max-width: 576px) {
+  #logo {
+    display: none;
+  }
+}
+
+// screen smaller that 992px, remove nav list and show hamburger icon.
+@media screen and (max-width: 992px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    display: none;
+    height: 85vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+    top: 15vh;
+    background-color: map-get($colors, "black");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 1em;
+    // move the nav-list off the screen
+    transform: translateX(100%);
+    /* transition: transform 0.5s ease-in; */
+    a {
+      color: white;
+    }
+  }
+
+  .nav-item {
+    opacity: 0;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 5;
+    div {
+      border: 1px solid black;
+      margin: 0.4em;
+      width: 1.8em;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+// create an animation for each  nav-item
+@keyframes navListFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+// change humberger to X
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Author */
+.author {
+  .container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  img {
+    width: 50px;
+    height: auto;
+  }
+  p {
+    padding: 0px 0px;
+  }
+}
+#authorName {
+  padding-top: 0.5em;
+}
+/* Section 1 */
+section {
+  margin-top: 5em;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-family: LydianBold;
+    font-size: 4rem;
+  }
+
+  .p1 {
+    line-height: 1.5;
+    font-family: SharpGroteskBook20;
+    font-size: 1.3rem;
+    opacity: 0.7;
+    padding-top: 2em;
+  }
+
+  .p2 {
+    opacity: 0.3;
+    padding: 2em 0;
+    font-family: SharpGroteskBook20;
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-family: SharpGroteskBook20;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: SharpGroteskBook20;
+    line-height: 2;
+    padding-bottom: 1em;
+  }
+
+  h3 {
+    font-family: SharpGroteskBook20;
+    margin-bottom: 1em;
+  }
+
+  .chiliOil-1 {
+    grid-column: 1/3;
+  }
+
+  .gif {
+    width: 100%;
+  }
+
+  .steamed-baozi {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+  }
+}
+
+.social-media-lists {
+  display: inline;
+  a {
+    text-decoration: none;
+  }
+}
+
+.social-media {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  section {
+    .container {
+      /* display: block; */
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 4em;
+    }
+  }
+
+  .box {
+    padding-bottom: 1em;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+@import "./butter_footer";

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+        .box{
+            width: 250px;
+            height: 150px;
+            border: 1px solid red;
+        }
+        #one{
+            /* use order to change the order of box */
+            order: 2;
+        }
+        #two{
+            order: 1;
+        }
+        #three{
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="one">one</div>
+        <div class="box" id="two">two</div>
+        <div class="box" id="three">three</div>
+    </div>
+</body>
+</html>

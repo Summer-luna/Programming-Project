@@ -1,0 +1,7 @@
+.bg-dark {
+  background-color: map-get($colors, "black");
+}
+
+.text-white {
+  color: map-get($colors, "white");
+}

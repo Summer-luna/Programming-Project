@@ -1,0 +1,28 @@
+// color palette
+$colors: (
+  "black": black,
+  "white": white,
+);
+
+//fonts
+$fonts: (
+  "title-lg": 3.8rem,
+  "describe": 1.5rem,
+  "view-recipe": 1.6rem,
+  "nav-text": 1.125rem,
+);
+
+/* .title-lg {
+  font-size: map-get($fonts, "title-lg");
+} */
+
+//fonts family
+@font-face {
+  font-family: SharpGroteskBook20;
+  src: url(../fonts/SharpGroteskBook20.ttf);
+}
+
+@font-face {
+  font-family: LydianBold;
+  src: url(../fonts/LydianBold.ttf);
+}
