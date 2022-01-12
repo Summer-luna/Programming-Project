@@ -1,0 +1,52 @@
+@font-face {
+  font-family: SharpGroteskBook20;
+  src: url(../fonts/SharpGroteskBook20.ttf);
+}
+
+@font-face {
+  font-family: LydianBold;
+  src: url(../fonts/LydianBold.ttf);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 83%;
+  margin: 0 auto;
+  max-width: 1232px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+}
+
+.body {
+  font-family: SharpGroteskBook20;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1232px;
+  }
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.bg-dark {
+  background-color: black;
+}
+
+.text-white {
+  color: white;
+}

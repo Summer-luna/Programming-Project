@@ -1,0 +1,79 @@
+footer {
+  height: 70vh;
+}
+
+footer .container {
+  color: white;
+  display: block;
+  padding: 10em 15.5em;
+  text-align: center;
+}
+
+footer h1 {
+  font-size: 4rem;
+  font-family: LydianBold;
+}
+
+footer p {
+  font-size: 1.125rem;
+  font-family: SharpGroteskBook20;
+  line-height: 1.5;
+  padding-bottom: 2.5em;
+}
+
+footer input {
+  background-color: black;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 12.5em;
+  font-size: 1.3rem;
+  padding: 1em;
+}
+
+footer button {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 1em;
+  border-radius: 5px;
+  width: 8em;
+  margin-left: 1em;
+  font-size: 1rem;
+}
+
+footer .copy-container {
+  position: relative;
+}
+
+footer .copyright {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+}
+
+@media (max-width: 576px) {
+  footer .container {
+    color: white;
+    display: block;
+    padding: 10em 0;
+    height: 40vh;
+    text-align: center;
+  }
+  footer .copyright {
+    color: white;
+    position: absolute;
+    bottom: -300px;
+    left: 100px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1014px) {
+  footer .container {
+    color: white;
+    display: block;
+    padding: 10em 6em;
+    text-align: center;
+  }
+}
