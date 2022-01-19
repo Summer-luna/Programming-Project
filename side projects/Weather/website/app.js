@@ -87,7 +87,7 @@ const getAll = async (url='') => {
     const res = await fetch(url);
     try{
         const newData = await res.json();
-        console.log(newData);
+        //console.log(newData);
         date.textContent = 'Date: ' + newData.date;
         temp.innerHTML = 'Temp ' + newData.temp + ' &deg;F';
         content.textContent = 'Feelings: ' + newData.content;

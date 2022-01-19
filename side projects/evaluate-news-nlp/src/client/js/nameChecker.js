@@ -1,16 +1,17 @@
-function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ]
+const error_msg = document.createElement('div');
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
+function checkForName() {
+    const name = document.querySelector('#name');
+    const form = document.querySelector('.form');
+    if(name.value == "" || name.value == null) {
+        error_msg.textContent = "Please Enter URL";
+        error_msg.style.color = "red";
+        form.insertBefore(error_msg, name);
+    }else{
+        error_msg.textContent = "";
+        form.insertBefore(error_msg, name);
     }
+    
 }
 
 export { checkForName }
