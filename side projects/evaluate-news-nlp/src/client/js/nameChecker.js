@@ -1,6 +1,5 @@
 const error_msg = document.createElement('div');
-
-function checkForName() {
+function checkForName() { 
     const name = document.querySelector('#name');
     const form = document.querySelector('.form');
     if(name.value == "" || name.value == null) {

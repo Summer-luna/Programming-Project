@@ -23,14 +23,26 @@ async function postUrl(url='', data={}){
         console.log('error', error);
     }
 }
-
+const error_msg = document.createElement('div');
 function handleSubmit(event) {
     event.preventDefault();
 
-    let urlText = document.querySelector('#name').value;
+    const pattern = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+
+    let regex = new RegExp(pattern);
     
-    postUrl('/getUrl', {u: urlText})
+    
+    const form = document.querySelector('.form');
+    let urlText = document.querySelector('#name');
+    
     // check what text was put into the form field
+    if(urlText.value != "" && urlText.value != null && urlText.value.match(regex)){
+        postUrl('http://localhost:8081/getUrl', {u: urlText.value})
+    }else{
+        error_msg.textContent = "Please Enter Valid URL";
+        error_msg.style.color = "red"; 
+        form.insertBefore(error_msg, urlText);
+    }
 }
 
 export { handleSubmit }

@@ -1,0 +1,27 @@
+form {
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 40px;
+}
+
+input {
+    padding: 5px 20px;
+    width: 100%;
+    line-height: 16px;
+    margin: 10px 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+.logo{  
+    font-size: 1.5rem;
+}
+
+@media (min-width:678px){
+    .logo{
+        margin: auto;
+        font-size: 2rem;
+    }
+}
