@@ -10,11 +10,11 @@ const App = () => {
   return(
     <div>
       <Header />
-      <Introduction />
+      {/* <Introduction />
       <Skill />
       <Categories />
       <Projects />
-      <Aboutme />
+      <Aboutme /> */}
     </div>
   )
 }
