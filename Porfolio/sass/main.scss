@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/src/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/src/fonts/Rubik/Rubik-VariableFont_wght.ttf");
+}
+
+@import './variables';
+@import './fonts';
+@import './header';
+@import './introduction';
+@import './project';
+@import './skill';
+@import './aboutme';
+@import './base';
+
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss'
+
