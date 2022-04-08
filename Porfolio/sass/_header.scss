@@ -1,77 +1,91 @@
-.navbar-toggler {
-  width: 20px;
-  //height: 20px;
-  position: relative;
-  transition: .5s ease-in-out;
-}
-
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
-  outline: none;
-  box-shadow: none;
-  border: 0;
-}
-
-.navbar-toggler span {
-  margin: 0;
-  padding: 0;
-}
-
-.toggler-icon {
-  display: block;
-  position: absolute;
-  height: 3px;
+.header{
+  background-color: $color-light;
   width: 100%;
-  background: #d3531a;
-  border-radius: 1px;
-  opacity: 1;
-  right: 0px;
-  transform: rotate(0deg);
-  transition: all .25s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.middle-bar {
-  margin-top: 0px;
+/* ========== nav ========== */
+.nav{
+  height: $header-height + 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* when navigation is clicked */
-
-.navbar-toggler .top-bar {
-  margin-top: 0px;
-  transform: rotate(135deg);
+.nav-menu{
+  margin-left: auto;
 }
 
-.navbar-toggler .middle-bar {
-  opacity: 0;
-  filter: alpha(opacity=0);
+.nav-list{
+  display: flex;
+  gap: 5rem;
 }
 
-.navbar-toggler .bottom-bar {
-  margin-top: 0px;
-  transform: rotate(-135deg);
+.nav-link{
+  transition: 0.3s;
+  &:hover{
+    color: $color-primary;
+  }
 }
 
-/* State when the navbar is collapsed */
-
-.navbar-toggler.collapsed .top-bar {
-  margin-top: -8px;
-  transform: rotate(0deg);
+.active-link{
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 45%;
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: $color-primary;
+    border-radius: 50%;
+  }
 }
 
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-  filter: alpha(opacity=100);
+/* ========== nav toggle icon ========== */
+
+$nav-line-width: 1.85rem;
+$nav-line-height: 0.2rem;
+
+.nav-line1{
+  width: $nav-line-width;
+  height: $nav-line-height;
+  background-color: black;
+  margin-bottom: 0.3rem;
 }
 
-.navbar-toggler.collapsed .bottom-bar {
-  margin-top: 8px;
-  transform: rotate(0deg);
+.nav-line2{
+  width: $nav-line-width;
+  height: $nav-line-height;
+  background-color: black;
+  margin-bottom: 0.3rem;
 }
 
-/* Color of 3 lines */
-
-.navbar-toggler.collapsed .toggler-icon {
-  background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
+.nav-line3{
+  width: $nav-line-width;
+  height: $nav-line-height;
+  background-color: black;
 }
+
+/* ========== responsive ========== */
+
+@media screen and (min-width:768px){
+  .nav-btn{
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .nav-menu{
+    display: none;
+  }
+}
+
+
+
+ 
+
+

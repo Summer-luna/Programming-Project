@@ -2,43 +2,48 @@ import React from "react";
 
 const Header = () => {
   return(
-    <div className="navbar navbar-expand-md navbar-light">
-      <div className="container">
-        {/* logo */}
-        <a className="navbar-brand" href="#">
-          <i className="bi bi-moon-stars"></i>
-        </a>
-        {/* collapse button */}
-        <button className="navbar-toggler d-flex d-md-none justify-content-around collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="toggler-icon top-bar"></span>
-          <span className="toggler-icon middle-bar"></span>
-          <span className="toggler-icon bottom-bar"></span>
-        </button>
-        {/* Collapsed content */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-md-auto">
-            <li className="nav-item mx-3">
-              <a className="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link" href="#skill">Skills</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link" href="#project">Projects</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link" href="#Aboutme">About me</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link">Contact</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link disabled">Blog</a>
-            </li>
-          </ul>
+    <>
+      <header className="header">
+        <div className="nav container px-15">
+          {/* nav logo */}
+          <a href="#">
+            <i className="bi bi-moon-stars"></i>
+          </a>
+          {/* nav menu*/}
+          <div className="nav-menu">
+            {/* nav list */}
+            <ul className="nav-list">
+              <li className="nav-item">
+                <a className="nav-link active-link" href="#">Home</a>
+              </li>
+              <li>
+                <a className="nav-link" href="#skill">Skills</a>
+              </li>
+              <li>
+                <a className="nav-link" href="#project">Projects</a>
+              </li>
+              <li>
+                <a className="nav-link" href="#Aboutme">About me</a>
+              </li>
+              <li>
+                <a className="nav-link" href="#contact">Contact</a>
+              </li>
+              <li>
+                <a className="nav-link" href="#blog">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div className="nav-btn">
+            {/* toggle button */}
+            <div className="nav-toggle nav-lines">
+              <div className="nav-line1"></div>
+              <div className="nav-line2"></div>
+              <div className="nav-line3"></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </header>
+    </>
   )
 }
 

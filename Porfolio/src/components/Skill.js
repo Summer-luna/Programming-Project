@@ -1,13 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTerminal } from '@fortawesome/free-solid-svg-icons'
-import { faHtml5, faCss3, faJsSquare, faReact, faGitAlt, faGithub,faSass, faWordpress, faNode} from '@fortawesome/free-brands-svg-icons'
-import responsive from '../img/responsive.svg'
+import { faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { faHtml5, faCss3, faJsSquare, faReact, faGitAlt, faGithub,faSass, faWordpress, faNode} from '@fortawesome/free-brands-svg-icons';
+import responsive from '../img/responsive.svg';
 
 const Skill = () => {
   return(
     <div className='' id="skill">
-      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#829cbc" fill-opacity="1" d="M0,32L1440,160L1440,320L0,320Z"></path></svg> */}
       <div className='bg-blue'>
       <div className='container'>
         <h5 className='text-center text-montserrat text-white mb-4'>SKILLS & TOOLS</h5>

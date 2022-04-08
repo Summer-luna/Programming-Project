@@ -8,10 +8,10 @@ import Aboutme from "./Aboutme";
 
 const App = () => {
   return(
-    <div>
+    <div className="container">
       <Header />
-      {/* <Introduction />
-      <Skill />
+      <Introduction />
+      {/* <Skill />
       <Categories />
       <Projects />
       <Aboutme /> */}

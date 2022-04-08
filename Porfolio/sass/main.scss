@@ -9,14 +9,20 @@
 }
 
 @import './variables';
-@import './fonts';
+@import './base';
+@import './layout';
+
+
 @import './header';
 @import './introduction';
-@import './project';
+
+//@import './fonts';
+/* @import './project';
 @import './skill';
 @import './aboutme';
-@import './base';
+@import './base'; */
 
 // import bootstrap
 //@import '../node_modules/bootstrap/scss/bootstrap.scss'
+
 
