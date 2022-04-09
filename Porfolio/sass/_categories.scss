@@ -1,0 +1,26 @@
+@keyframes change-color{
+  to{
+    background-color: rgb(255,76,96);
+  }
+}
+
+.categories{
+  //background-color: azure;
+  padding-bottom: 3rem;
+  h2{
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+  .btn{
+    border: none;
+    margin: 1rem 2rem 1rem 0;
+    font-size: $normal-font-size;
+    
+    &:hover{
+      cursor: pointer;
+      animation: change-color 2s ease-in;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}

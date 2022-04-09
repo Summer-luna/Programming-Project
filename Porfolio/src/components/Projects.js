@@ -1,6 +1,7 @@
 import React from 'react';
 import Project from './Project';
 import projectImage1 from '../img/project1.png';
+import Categories from './Categories';
 
 const Projects = () => {
   const projects = [
@@ -47,12 +48,10 @@ const Projects = () => {
   ]
 
   return(
-    <>
-      <div className='container' id="project">
-      <Project projects={projects} id="project"/>
-      </div>
-    </>
-    
+    <div className='projects' id="projects">
+      <Categories />
+      <Project projects={projects} />
+    </div>
   )
 }
 

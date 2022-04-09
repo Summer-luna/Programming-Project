@@ -29,11 +29,9 @@ const Categories = () => {
     },
   ];
   return(
-    <div>
-     <div className='container'>
-      <h1 className='text-center mb-5'><strong>Projects</strong></h1>
+    <div className='categories'>
+      <h2>Projects</h2>
       <Category categories={categories} />
-      </div>
     </div>
   )
 }

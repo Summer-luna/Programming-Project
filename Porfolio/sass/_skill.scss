@@ -1,3 +1,31 @@
-/* .bg-blue{
-  background-color: #829CBC;
-} */
+.skills{
+  margin-top: 8rem;
+  h2{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    //text-align: center;
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col{
+  margin: 2rem 4rem 2rem 0;
+  text-align: center;
+
+  i{
+    font-size: 4rem;
+    color: $color-dark;
+  }
+  
+  .icon{
+    font-size: 4rem;
+    color: $color-dark;
+  }
+
+}
+
+
+

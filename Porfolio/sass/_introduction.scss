@@ -1,26 +1,43 @@
 .home{
-  height: 80vh;
-  min-height: 80vh;
+  height: 90vh;
+  min-height: 90vh;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .intro{
   text-align: center;
+  h1{
+    margin-bottom: 0.8rem;
+  }
 }
 
 .social-icons {
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .linkedin{
+    color: $color-dark;
+    font-size: 1.3rem;
+  }
 }
 
 .avatar{
-  height: 6rem;
-  color: rgba(255, 187, 0, 0.855);
+  height: 7rem;
+  width: 7rem;
+  color: rgba(29, 28, 23, 0.904);
+  border-radius: 100%;
+  //background-color: rgba(250, 224, 129, 0.99);
+  background-color: #FCCA46;
+  margin-bottom: 1rem;
 }
 
 .btn{
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: $border-radius+1rem;
   &:focus{
     outline: none;
@@ -48,8 +65,61 @@
     animation-duration: 0.3s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
+  } 
+}
+
+/* Scroll Down */
+.scroll-down{
+  position: absolute;
+  left:0;
+  bottom: 2rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.mouse-wrapper{
+  font-size: $small-font-size;
+  max-width: 100px;
+}
+
+@keyframes ani-mouse{
+  0%{
+    top: 30%;
+  }
+  15%{
+    top: 50%;
+  }
+  50%{
+    top: 50%;
+  }
+  100%{
+    top: 30%;
   }
 }
+
+.mouse{
+  border: 2px solid $color-dark;
+  display: block;
+  height: 1.75rem;
+  width: 1.2rem;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: $border-radius;
+  position: relative;
+  .wheel{
+    background-color: $color-dark;
+    border-radius: 50%;
+    width: 0.25rem;
+    height: 0.25rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.35rem;
+    display: block;
+    animation: ani-mouse 1.5s linear infinite;
+  }
+
+}
+
 
 
 

@@ -1,8 +1,38 @@
-.text-grey{
-  color: rgb(168, 166, 166);
+@import './categories';
+
+.project{
+  //background-color: aquamarine;
+  gap: 2rem;
 }
 
-.text-blue{
-  color: #6D9DC5;
-  background: #6D9DC5;
+@keyframes img-push
+{
+  50%{
+    transform: translateY(-1rem);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.card{
+  width: 18rem;
+  border-radius: 5%;
+  background-color: white;
+  box-shadow: $box-shadow;
+  &:hover{
+    animation-name: img-push;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+  }
+}
+
+.card-img-top{
+  border-radius: 5% 5% 0 0;
+}
+
+.card-title{
+  font-size: 1rem;
+  padding: 10px 0;
 }
