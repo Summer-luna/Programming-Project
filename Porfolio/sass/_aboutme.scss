@@ -1,3 +1,132 @@
 .aboutme{
-  background-color: #6290c8;
+  margin-top: 10rem;
 }
+
+.aboutme-intro{
+  display: flex;
+  margin-top: 4rem;
+
+  .avatar{
+    margin-right: 8rem;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  p{
+    max-width: 50%;
+    font-size: $normal-font-size;
+    line-height: 2;
+    background-color: white;
+    border-radius: $border-radius;
+    padding: 2rem;
+  }
+
+  .school-link{
+    color: $color-blue;
+    font-weight: 600;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .btn{
+    padding: 0.4rem 1.3rem;
+    margin-top: 2rem;
+  }
+}
+
+.timeline-container{
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline{
+  height: auto;
+  max-width: 80%;
+  margin: auto;
+  ul li{
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: $border-radius;
+  }
+  ul li:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.timeline-content h3{
+  margin-bottom: 10px;
+}
+
+.mini-calendar{
+  margin-right: 0.6rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .timeline{
+    /* timeline middle line */
+    &::before{
+      content: ' ';
+      width: 2px;
+      height: 75%;
+      background-color: hsla(253, 15%, 65%, 0.55);
+      position: absolute;
+      left: 50%;
+    }
+
+    /* time line cards */
+    ul li{
+      width: 50%;
+      margin-bottom: 4rem;
+      
+      &:nth-child(odd){
+        float: left;
+        clear: right;
+        transform: translateX(-2rem);
+        border-radius: $border-radius 0 $border-radius $border-radius;
+      }
+      &:nth-child(even){
+        float: right;
+        clear: left;
+        transform: translateX(2rem);
+        border-radius: 0 $border-radius $border-radius $border-radius;
+      }
+      &::after{
+        content: ' ';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: $color-yellow;
+        border-radius: 50%;
+        top: 0;
+        
+      }
+
+      &:nth-child(odd)::after{
+        right: 0;
+        transform: translate(210%, -60%);
+      }
+      
+      &:nth-child(even)::after{
+        left: 0;
+        transform: translate(-210%, -60%);
+
+      }
+
+      &:hover::after{
+        background-color: $color-blue;
+      }
+    }
+  }
+}
+
+
+
+
+
+

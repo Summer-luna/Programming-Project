@@ -8,9 +8,9 @@ const Project = ({projects}) => {
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <Tags tags={tags} />
-          <div className="" >
-            <a href={link} className=""><i className="bi bi-github me-2"></i>Github</a>
-            <a href="#" className=''>View</a>
+          <div className="card-text" >
+            <a href={link} className=""><i className="bi bi-github"></i>Github</a>
+            <a href="#" className='web-view'>View</a>
           </div>
         </div>
     </div>

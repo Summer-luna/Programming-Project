@@ -18,7 +18,7 @@
 .card{
   width: 18rem;
   border-radius: 5%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.57);
   box-shadow: $box-shadow;
   &:hover{
     animation-name: img-push;
@@ -32,7 +32,25 @@
   border-radius: 5% 5% 0 0;
 }
 
+.card-body{
+  padding: 1rem;
+}
+
 .card-title{
   font-size: 1rem;
-  padding: 10px 0;
+  padding-bottom: 0.5rem;
 }
+
+.card-tag{
+  margin-right: 1rem;
+}
+
+.card-text{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  i{
+    padding-right: 0.5rem;
+  }
+}
+

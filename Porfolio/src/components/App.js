@@ -1,10 +1,12 @@
 import React from "react";
 import Header from './Header';
 import Introduction from "./Inroduction";
-import Categories from "./Categories";
 import Projects from "./Projects";
 import Skill from "./Skill";
 import Aboutme from "./Aboutme";
+import Contact from "./Contact";
+import Footer from "./Footer";
+
 
 const App = () => {
   return(
@@ -13,10 +15,9 @@ const App = () => {
       <Introduction />
       <Skill />
       <Projects />
-       {/*
-      
-      
-      <Aboutme /> */}
+      <Aboutme />
+      <Contact />
+      <Footer />
     </div>
   )
 }
