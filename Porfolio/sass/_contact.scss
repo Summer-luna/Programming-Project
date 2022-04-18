@@ -1,5 +1,10 @@
 .contact{
   margin-top: 15rem;
+
+  .btn{
+    border: none;
+    cursor: pointer;
+  }
 }
 
 .contact-title{
@@ -37,7 +42,7 @@
 
 .contact-inputs{
   display: grid;
-  row-gap: 2rem;
+  row-gap: 4rem;
 }
 
 .contact-content{
@@ -63,6 +68,7 @@
 }
 
 .contact-input{
+  
   &:focus ~ span{
     width: 100%;
   }
@@ -87,22 +93,45 @@
 
 .contact-label{
   position: absolute;
-  top: 0.40rem;
+  top: -1.5rem;
   width: 100%;
   font-size: $small-font-size;
   transition: 0.3;
 }
 
 .contact-area{
-  height: 7rem;
-
+  height: 8rem;
   textarea{
     resize: none;
+    padding: 1rem 0;
   }
 }
 
 
+@media screen and (max-width: 768px) {
+  .contact{
+    .row{
+      flex-direction: column;
+      gap: 5rem;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .contact-box{  
+      min-width: 100%;
+    }
+  
+    .contact-data{
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .contact-form{
+      min-width: 100%;
+    }
+  }
 
+}
 
 
 

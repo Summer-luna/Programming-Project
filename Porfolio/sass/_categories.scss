@@ -18,9 +18,15 @@
     
     &:hover{
       cursor: pointer;
-      animation: change-color 1s ease-in;
+      animation: change-color 0.5s ease-in;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
   }
 }
+
+.active-btn{
+  background-color: rgb(255,76,96);
+}
+
+

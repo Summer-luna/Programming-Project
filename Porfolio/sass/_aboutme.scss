@@ -45,7 +45,7 @@
 
 .timeline{
   height: auto;
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
   ul li{
     background-color: white;
@@ -66,7 +66,8 @@
   margin-right: 0.6rem;
 }
 
-@media screen and (min-width: 768px) {
+/* 768px to ... */
+@media screen and (min-width: 992px) {
 
   .timeline{
     /* timeline middle line */
@@ -125,8 +126,47 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .aboutme-intro{
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+    //background-color: antiquewhite;
+  
+    .avatar{
+      margin-left: 8rem;
+      margin-bottom: 4rem;
+      height: 12rem;
+      width: 12rem;
+    }
+  
+    p{
+      max-width: 100%;
+      font-size: $normal-font-size;
+      line-height: 2;
+      background-color: white;
+      border-radius: $border-radius;
+      padding: 2rem;
+    }
+  
+    .school-link{
+      color: $color-blue;
+      font-weight: 600;
+  
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  
+    .btn{
+      padding: 0.4rem 1.3rem;
+      margin-top: 2rem;
+    }
+  }
 
 
+}
 
 
 

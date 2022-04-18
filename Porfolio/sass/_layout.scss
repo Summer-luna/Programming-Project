@@ -8,5 +8,22 @@
   padding: 0 15px;
 }
 
+// 768px to 1200px
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container{
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
+}
+
+// ... to 769px
+@media screen and (max-width: 767px) {
+  .container{
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
+}
 
 

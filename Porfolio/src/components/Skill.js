@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTerminal } from '@fortawesome/free-solid-svg-icons';
 import { faHtml5, faCss3, faJsSquare, faReact, faGitAlt, faGithub,faSass, faWordpress, faNode} from '@fortawesome/free-brands-svg-icons';
-import responsive from '../img/responsive.svg';
+import responsive from '../img/responsive.png';
 
 const Skill = () => {
   return(
@@ -35,7 +35,7 @@ const Skill = () => {
           </div>
           <div className='col'>
             <i class="devicon-php-plain" style={{fontSize: "4rem"}}></i>
-            <p>Node JS</p>
+            <p>PHP</p>
           </div>
           <div className='col'>
             <i class="devicon-bootstrap-plain" style={{fontSize: "4rem"}}></i>

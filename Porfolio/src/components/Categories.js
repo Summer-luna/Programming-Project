@@ -1,7 +1,7 @@
 import React from 'react';
 import Category from './Category';
 
-const Categories = () => {
+const Categories = ({onCategoryClick}) => {
   const categories = [
     {
       id: 0,
@@ -28,10 +28,11 @@ const Categories = () => {
       category: "CSS"
     },
   ];
+
   return(
     <div className='categories'>
       <h2>Projects</h2>
-      <Category categories={categories} />
+      <Category categories={categories} onCategoryClick={onCategoryClick}/>
     </div>
   )
 }
